@@ -12,6 +12,7 @@ class OnboardingPage extends StatefulWidget {
 class _OnboardingPageState extends State<OnboardingPage>
     with SingleTickerProviderStateMixin {
   int currentPage = 0;
+  int initialPage = 0;
   final PageController pageController = PageController();
   late final AnimationController animationController;
 
@@ -25,11 +26,14 @@ class _OnboardingPageState extends State<OnboardingPage>
     animationController.forward();
   }
 
+  bool get isLastPage => currentPage >= 4;
+
   void _animationListener() {
     setState(() {});
-    if (currentPage >= 4) {
-      currentPage = 0;
-      pageController.jumpToPage(0);
+    pageController.addListener(pageListener);
+    if (isLastPage) {
+      currentPage = initialPage;
+      pageController.jumpToPage(initialPage);
     }
     if (animationController.isCompleted) {
       currentPage++;
@@ -41,6 +45,8 @@ class _OnboardingPageState extends State<OnboardingPage>
       animationController.forward();
     }
   }
+
+  void pageListener() => currentPage = pageController.page!.floor();
 
   @override
   void dispose() {
