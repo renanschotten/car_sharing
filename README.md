@@ -6,16 +6,16 @@ Made following the design by Aleksandr Volodkovich
 
 ## First Page
 
-[First Page](/screenshots/first_page.png)
+![First Page](/screenshots/first_page.png)
 
 ## Second Page
 
-[Second Page](/screenshots/second_page.png)
+![Second Page](/screenshots/second_page.png)
 
 ## Third Page
 
-[Third Page](/screenshots/third_page.png)
+![Third Page](/screenshots/third_page.png)
 
 ## Fourth Page
 
-[Fourth Page](/screenshots/fourth_page.png)
+![Fourth Page](/screenshots/fourth_page.png)
